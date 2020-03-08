@@ -1,7 +1,7 @@
 from City import City
 
 
-def loadFromFile(path):
+def load_from_file(path):
     with open(path) as f:
         lines = [line.rstrip('\n') for line in f]
 
@@ -10,13 +10,13 @@ def loadFromFile(path):
     comment = lines[2].split(": ")[1]
     dimension = lines[3].split(": ")[1]
     edge_weight_type = lines[4].split(": ")[1]
-    townsList = lines[6:6 + int(dimension)]
-    towns = readTowns(townsList, edge_weight_type)
+    towns_list = lines[6:6 + int(dimension)]
+    towns = read_towns(towns_list, edge_weight_type)
 
     return Map(name, type, comment, dimension, edge_weight_type, towns)
 
 
-def readTowns(towns, edge_weight_type):
+def read_towns(towns, edge_weight_type):
     cities = []
     for line in towns:
         newline = line.split(" ")

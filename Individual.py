@@ -1,7 +1,6 @@
-import math
 import random
 
-from Map import Map, loadFromFile
+from Map import Map, load_from_file
 from City import City, calculate_distance
 
 
@@ -9,7 +8,7 @@ class Individual:
     map: Map
 
     def __init__(self, filename):
-        self.map = loadFromFile(filename)
+        self.map = load_from_file(filename)
 
     def calculate_fitness(self):
         fitness = 0
@@ -44,7 +43,7 @@ class Individual:
 
         self.map.towns = visited
 
-        print("Najlepszy wynik dla zachłannego algorytmu:{0} ".format(self.calculate_fitness()))
+        print("Najlepszy wynik dla zachłannego algorytmu: {0}".format(self.calculate_fitness()))
 
 
-Individual.greedy_alg(Individual("TSP/berlin11_modified.tsp"))
+Individual.greedy_alg(Individual("TSP/pr2392.tsp"))

@@ -18,7 +18,7 @@ class City:
 
 def calculate_distance(town1, town2):
     if town1.weightType == "GEO":
-        return gp.vincenty((town1.x, town1.y), (town2.x, town2.y))
+        return float(gp.great_circle((town1.x, town1.y), (town2.x, town2.y)).km)
     else:
 
         return float(math.sqrt((town1.x - town2.x) ** 2 + (town1.y - town2.y) ** 2))
